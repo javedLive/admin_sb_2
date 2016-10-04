@@ -15,16 +15,25 @@ Route::get('/', function () {
     return view('welcome');
 });*/
 
-/* Admin Sb-2 */
 
-/* IndexPage */
-Route::get('/', function () {
-    return view('pages.index');
-});
+Route::get('/',[
+   'uses'=>'AdminController@index',
+    'as'=>'/'
+]);
 
-/* Logout  */
 
-Route::get('/logout',function(){
-    return view('pages.login');
-});
+Route::post('/login',[
+    'uses'=>'AdminController@login',
+    'as'=>'login'
+]);
+    
+Route::get('/logout', [
+    'uses' => 'AdminController@getLogout',
+    'as' => 'logout'
+]);
+
+Route::get('/dashboard',[
+    'uses'=>'AdminController@getDashboard',
+    'as'=>'dashboard'
+]);
 
