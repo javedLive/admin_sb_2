@@ -34,6 +34,7 @@ Route::get('/logout', [
 
 Route::get('/dashboard',[
     'uses'=>'AdminController@getDashboard',
-    'as'=>'dashboard'
+    'as'=>'dashboard',
+    'middleware' => 'auth'
 ]);
 
