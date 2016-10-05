@@ -16,10 +16,10 @@ Route::get('/', function () {
 });*/
 
 
-Route::get('/',[
-   'uses'=>'AdminController@index',
-    'as'=>'/'
-]);
+Route::get('/',function(){
+    return view('pages.login');
+})->name('/');
+
 
 
 Route::post('/login',[
